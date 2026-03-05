@@ -1,9 +1,7 @@
-python-dotenv>=1.0.0
+gradio>=4.0.0
+openai>=1.0.0
 gTTS>=2.5.0
 openai-whisper>=20231117
 torch
 soundfile>=0.12.1
-gradio>=4.0.0
-sounddevice>=0.4.6
-numpy>=1.23.0
-playsound3>=2.5.2
+python-dotenv>=1.0.0
