@@ -1,1 +1,87 @@
 
+# Instalação de Dependências
+
+!pip install git+https://github.com/openai/whisper.git -q
+!pip install openai gTTS gradio -q
+
+
+# Configuração Inicial
+
+import os
+import whisper
+import gradio as gr
+from gtts import gTTS
+from openai import OpenAI
+
+language = "pt"
+
+# Coloque sua API Key aqui
+os.environ["OPENAI_API_KEY"] = "TODO"
+client = OpenAI()
+
+
+# 1. Reconhecimento de Fala com Whisper
+
+model = whisper.load_model("small")
+
+def transcribe(audio):
+    result = model.transcribe(audio, fp16=False, language=language)
+    return result["text"]
+
+
+# 2. Integração com ChatGPT
+
+def ask_chatgpt(text):
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[{"role": "user", "content": text}]
+    )
+    return response.choices[0].message.content
+
+
+# 3. Conversão de Texto para Voz (gTTS)
+def text_to_speech(text):
+    response_audio = "response_audio.mp3"
+    gtts_object = gTTS(text=text, lang=language, slow=False)
+    gtts_object.save(response_audio)
+    return response_audio
+
+# 4. Pipeline Completo
+def voice_assistant(audio):
+
+    transcription = transcribe(audio)
+
+    response = ask_chatgpt(transcription)
+
+    audio_response = text_to_speech(response)
+
+    return transcription, response, audio_response
+
+
+
+# Interface Gradio
+
+with gr.Blocks() as app:
+
+    gr.Markdown("# Assistente de Voz com Whisper + ChatGPT")
+
+    audio_input = gr.Audio(
+        sources=["microphone"],
+        type="filepath",
+        label="Gravar Pergunta"
+    )
+
+    run_button = gr.Button("Executar")
+
+    transcription_output = gr.Textbox(label="Transcrição")
+    response_output = gr.Textbox(label="Resposta do ChatGPT")
+
+    audio_output = gr.Audio(label="Resposta em Áudio")
+
+    run_button.click(
+        voice_assistant,
+        inputs=audio_input,
+        outputs=[transcription_output, response_output, audio_output]
+    )
+
+app.launch()
