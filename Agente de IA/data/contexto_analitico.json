@@ -1,0 +1,14 @@
+{
+  "objetivo": "Monitorar indicadores macroeconômicos brasileiros com base em séries públicas do Banco Central.",
+  "perguntas_frequentes": [
+    "Quais indicadores subiram ou caíram no período?",
+    "Existe sinal de pressão inflacionária?",
+    "O câmbio está mais volátil?",
+    "A atividade econômica está desacelerando?"
+  ],
+  "restricoes": [
+    "Não recomendar compra ou venda de ativos.",
+    "Não responder com base em memória quando houver divergência com os dados carregados.",
+    "Admitir ausência de dados quando a série não estiver disponível."
+  ]
+}
