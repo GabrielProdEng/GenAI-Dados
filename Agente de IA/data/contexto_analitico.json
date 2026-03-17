@@ -1,14 +1,15 @@
 {
-  "objetivo": "Monitorar indicadores macroeconômicos brasileiros com base em séries públicas do Banco Central.",
+  "objetivo": "Monitorar indicadores macroeconômicos brasileiros com base em séries públicas do Banco Central e permitir análise conversacional local via Ollama.",
   "perguntas_frequentes": [
-    "Quais indicadores subiram ou caíram no período?",
-    "Existe sinal de pressão inflacionária?",
-    "O câmbio está mais volátil?",
-    "A atividade econômica está desacelerando?"
+    "Como está o comportamento recente da inflação?",
+    "O câmbio acelerou na janela consultada?",
+    "Quais indicadores estão em alerta?",
+    "O que os últimos dados sugerem sobre atividade econômica?"
   ],
   "restricoes": [
     "Não recomendar compra ou venda de ativos.",
-    "Não responder com base em memória quando houver divergência com os dados carregados.",
+    "Não afirmar uso de fontes externas além dos dados fornecidos pela aplicação.",
+    "Não inventar valores, datas ou indicadores.",
     "Admitir ausência de dados quando a série não estiver disponível."
   ]
 }
