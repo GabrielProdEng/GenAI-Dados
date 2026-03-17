@@ -1,0 +1,59 @@
+{
+  "fonte_principal": "Banco Central do Brasil - API BCData/SGS",
+  "indicadores": [
+    {
+      "codigo": 432,
+      "nome": "Meta da taxa Selic",
+      "categoria": "juros",
+      "periodicidade": "diaria",
+      "unidade": "% a.a.",
+      "descricao": "Meta definida para a taxa Selic.",
+      "uso_no_agente": "acompanhar orientação de política monetária"
+    },
+    {
+      "codigo": 11,
+      "nome": "Taxa Selic diária",
+      "categoria": "juros",
+      "periodicidade": "diaria",
+      "unidade": "% a.a.",
+      "descricao": "Taxa Selic observada na série diária.",
+      "uso_no_agente": "comparar ritmo recente de juros com a meta"
+    },
+    {
+      "codigo": 433,
+      "nome": "IPCA",
+      "categoria": "inflacao",
+      "periodicidade": "mensal",
+      "unidade": "%",
+      "descricao": "Índice Nacional de Preços ao Consumidor Amplo.",
+      "uso_no_agente": "monitorar inflação corrente"
+    },
+    {
+      "codigo": 1,
+      "nome": "Dólar americano (venda) - diário",
+      "categoria": "cambio",
+      "periodicidade": "diaria",
+      "unidade": "R$/US$",
+      "descricao": "Taxa de câmbio livre - dólar americano - venda - diário.",
+      "uso_no_agente": "acompanhar pressão cambial"
+    },
+    {
+      "codigo": 24363,
+      "nome": "IBC-Br",
+      "categoria": "atividade",
+      "periodicidade": "mensal",
+      "unidade": "índice",
+      "descricao": "Índice de Atividade Econômica do Banco Central - Brasil.",
+      "uso_no_agente": "acompanhar ritmo da atividade econômica"
+    },
+    {
+      "codigo": 29037,
+      "nome": "Endividamento das famílias com o SFN",
+      "categoria": "credito",
+      "periodicidade": "mensal",
+      "unidade": "%",
+      "descricao": "Indicador de endividamento das famílias com o Sistema Financeiro Nacional.",
+      "uso_no_agente": "avaliar pressão financeira das famílias"
+    }
+  ]
+}
