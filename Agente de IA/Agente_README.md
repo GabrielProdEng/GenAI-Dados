@@ -133,10 +133,8 @@ Assim, o LLM atua como **camada conversacional e analítica local**.
 
 ```text
 lab-monitor-indicadores-bacen/
-├── README.md
+├── Agente_README.md
 ├── requirements.txt
 ├── data/
 ├── docs/
 ├── src/
-├── notebooks/
-└── examples/
